@@ -2,7 +2,11 @@
 
 internal sealed class PersonBuilder : FunctionalBuilder<Person, PersonBuilder>
 {
-    public PersonBuilder Called(string name) => Do(p => p.Name = name);
+    public PersonBuilder Called(string firstName, string lastName) => Do(p =>
+    {
+        p.FirstName = firstName;
+        p.LastName = lastName;
+    });
 
     public PersonBuilder WorkAs(string position) => Do(p => p.Position = position);
 
